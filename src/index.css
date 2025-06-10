@@ -1,0 +1,120 @@
+/* (以前お渡しした、星空のアニメーションを含む完全版のコードをここに貼り付けます) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  .dark body {
+    background-color: #000;
+    overflow: hidden;
+  }
+  
+  .dark #stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  }
+  
+  .dark #root-container {
+      height: 100vh;
+      overflow-y: auto;
+      position: relative;
+      z-index: 1;
+  }
+
+  @keyframes move-stars {
+    from {transform: translateY(0px);}
+    to {transform: translateY(-2000px);}
+  }
+  .stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 793px 1359px #FFF, 157px 1173px #FFF, 1050px 1827px #FFF, 479px 1270px #FFF, 145px 579px #FFF, 1334px 1069px #FFF, 1424px 1307px #FFF, 1845px 124px #FFF, 503px 387px #FFF, 1695px 1192px #FFF, 127px 1435px #FFF, 853px 1437px #FFF, 62px 1813px #FFF, 532px 1475px #FFF, 1174px 1746px #FFF, 1141px 1656px #FFF, 749px 123px #FFF, 1192px 35px #FFF, 326px 1499px #FFF, 1045px 1483px #FFF, 1237px 1255px #FFF, 448px 113px #FFF, 1378px 1299px #FFF, 1352px 1450px #FFF, 1155px 1013px #FFF, 1690px 1170px #FFF, 1313px 432px #FFF, 1822px 1184px #FFF, 1324px 1002px #FFF, 1838px 1319px #FFF, 69px 135px #FFF, 160px 1232px #FFF, 1583px 1121px #FFF, 1139px 1332px #FFF;
+    animation: move-stars 200s linear infinite;
+  }
+  .stars2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: 1778px 108px #FFF, 1039px 381px #FFF, 1789px 1957px #FFF, 76px 1435px #FFF, 1109px 1345px #FFF, 953px 1493px #FFF, 72px 1584px #FFF, 1499px 774px #FFF, 553px 1812px #FFF, 101px 1180px #FFF, 1419px 1007px #FFF, 1421px 1526px #FFF, 124px 1538px #FFF, 1313px 1176px #FFF, 1234px 1162px #FFF, 1189px 1534px #FFF, 174px 1500px #FFF, 350px 1432px #FFF, 1709px 1478px #FFF, 1395px 1284px #FFF;
+    animation: move-stars 150s linear infinite;
+  }
+  .stars3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 4px;
+    height: 4px;
+    background: transparent;
+    box-shadow: 947px 1941px #FFF, 1515px 1227px #FFF, 743px 1740px #FFF, 1812px 691px #FFF, 1599px 644px #FFF, 152px 1093px #FFF, 1536px 82px #FFF, 1836px 1424px #FFF, 1653px 186px #FFF, 500px 1490px #FFF, 1261px 1223px #FFF, 1445px 1149px #FFF, 792px 1501px #FFF, 1307px 1441px #FFF, 1006px 1765px #FFF;
+    animation: move-stars 100s linear infinite;
+  }
+}
