@@ -60,8 +60,7 @@
   
   .dark body {
     background-color: #000;
-    overflow: hidden;
-  }
+   }
   
   .dark #stars-container {
     position: fixed;
